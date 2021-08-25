@@ -38,16 +38,30 @@ class myApp extends StatelessWidget {
                         padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(width: 2, color: Colors.black),
+                          border: Border.all(width: 2, color: Colors.purple),
                         ),
                         margin:
                             EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                        child: Text(e.amount.toString()),
+                        child: Text(
+                          '\₹${e.amount}',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.purple),
+                        ),
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(e.title),
-                          Text(e.date.toString()),
+                          Text(
+                            e.title,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.black),
+                          ),
+                          Text(e.date.toString(),
+                              style: TextStyle(color: Colors.grey)),
                         ],
                       )
                     ],
