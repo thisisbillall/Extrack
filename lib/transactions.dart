@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+//Class File to store transactin objects
+
 class transactions {
   final String id;
   final String title;
