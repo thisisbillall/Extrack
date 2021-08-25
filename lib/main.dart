@@ -35,6 +35,13 @@ class myApp extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(width: 2, color: Colors.black),
+                        ),
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                         child: Text(e.amount.toString()),
                       ),
                       Column(
