@@ -7,9 +7,11 @@ final List<transactions> transactionLists = [
   transactions('t1', 'Shoes', 5000, DateTime.now()),
   transactions('t2', 't-shirts', 500, DateTime.now()),
   transactions('t3', 'Watch', 1500, DateTime.now()),
-  transactions('t4', 'Glasses', 800, DateTime.now()),
-  transactions('t5', 'Potatoes', 100, DateTime.now()),
+  // transactions('t4', 'Glasses', 800, DateTime.now()),
+  // transactions('t5', 'Potatoes', 100, DateTime.now()),
 ];
+final titleController = TextEditingController();
+final priceController = TextEditingController();
 
 class myApp extends StatelessWidget {
   @override
@@ -28,6 +30,36 @@ class myApp extends StatelessWidget {
                 color: Colors.deepOrangeAccent,
                 child: Text("CHART"),
                 elevation: 7,
+              ),
+            ),
+            Card(
+              child: Container(
+                padding: EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Title'),
+                      controller: titleController,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Price'),
+                      controller: priceController,
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                      child: OutlineButton(
+                        child: Text("Add"),
+                        onPressed: () {
+                          print(titleController.text);
+                          print(priceController.text);
+                        },
+                        textColor: Colors.purple,
+                        borderSide: BorderSide(color: Colors.purple),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Column(
